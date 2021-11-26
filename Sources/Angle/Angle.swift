@@ -17,11 +17,6 @@ public struct Angle {
     }
 }
 
-extension Angle: ExpressibleByFloatLiteral {
-    public init(floatLiteral value: Double) {
-        self.init(radian: value)
-    }
-}
 
 // extension for sexagesimal measure
 public extension Angle {
@@ -104,24 +99,48 @@ public extension Angle {
 
 // extension for inverse trigonometric functions
 public extension Angle {
+    static func arcsine(of angle: Angle) -> Double {
+        return angle.arcsine
+    }
+    
     var arcsine: Double {
         return asin(self.radian)
+    }
+    
+    static func arccosine(of angle: Angle) -> Double {
+        return angle.arccosine
     }
     
     var arccosine: Double {
         return acos(self.radian)
     }
     
+    static func arctangent(of angle: Angle) -> Double {
+        return angle.arctangent
+    }
+    
     var arctangent: Double {
         return atan(self.radian)
+    }
+    
+    static func arcsecant(of angle: Angle) -> Double {
+        return angle.arcsecant
     }
     
     var arcsecant: Double {
         return acos(1 / self.radian)
     }
     
+    static func arccosecant(of angle: Angle) -> Double {
+        return angle.arccosecant
+    }
+    
     var arccosecant: Double {
         return asin(1 / self.radian)
+    }
+    
+    static func arccotangent(of angle: Angle) -> Double {
+        return angle.arccotangent
     }
     
     var arccotangent: Double {
