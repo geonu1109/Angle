@@ -1,6 +1,6 @@
 import Foundation
 
-// declaration using circular measure
+// MARK: declaration using circular measure
 public struct Angle {
     public var radian: Double
     
@@ -18,7 +18,7 @@ public struct Angle {
 }
 
 
-// extension for sexagesimal measure
+// MARK: extension for sexagesimal measure
 public extension Angle {
     var degree: Double {
         get {
@@ -46,14 +46,14 @@ public extension Angle {
     }
 }
 
-// extension for trigonometric functions
+// MARK: extension for trigonometric functions
 public extension Angle {
     static func sine(of angle: Angle) -> Double {
         return angle.sine
     }
     
     var sine: Double {
-        return sin(self.radian)
+        return self.radian.sine
     }
     
     static func cosine(of angle: Angle) -> Double {
@@ -61,7 +61,7 @@ public extension Angle {
     }
     
     var cosine: Double {
-        return cos(self.radian)
+        return self.radian.cosine
     }
     
     static func tangent(of angle: Angle) -> Double {
@@ -69,7 +69,7 @@ public extension Angle {
     }
     
     var tangent: Double {
-        return tan(self.radian)
+        return self.radian.tangent
     }
     
     static func secant(of angle: Angle) -> Double {
@@ -77,7 +77,7 @@ public extension Angle {
     }
     
     var secant: Double {
-        return 1 / cos(self.radian)
+        return self.radian.secant
     }
     
     static func cosecant(of angle: Angle) -> Double {
@@ -85,7 +85,7 @@ public extension Angle {
     }
     
     var cosecant: Double {
-        return 1 / sin(self.radian)
+        return self.radian.cosecant
     }
     
     static func cotangent(of angle: Angle) -> Double {
@@ -93,18 +93,18 @@ public extension Angle {
     }
     
     var cotangent: Double {
-        return 1 / tan(self.radian)
+        return self.radian.cotangent
     }
 }
 
-// extension for inverse trigonometric functions
+// MARK: extension for inverse trigonometric functions
 public extension Angle {
     static func arcsine(of angle: Angle) -> Double {
         return angle.arcsine
     }
     
     var arcsine: Double {
-        return asin(self.radian)
+        return self.radian.arcsine
     }
     
     static func arccosine(of angle: Angle) -> Double {
@@ -112,7 +112,7 @@ public extension Angle {
     }
     
     var arccosine: Double {
-        return acos(self.radian)
+        return self.radian.arccosine
     }
     
     static func arctangent(of angle: Angle) -> Double {
@@ -120,7 +120,7 @@ public extension Angle {
     }
     
     var arctangent: Double {
-        return atan(self.radian)
+        return self.radian.arctangent
     }
     
     static func arcsecant(of angle: Angle) -> Double {
@@ -128,7 +128,7 @@ public extension Angle {
     }
     
     var arcsecant: Double {
-        return acos(1 / self.radian)
+        return self.radian.arcsecant
     }
     
     static func arccosecant(of angle: Angle) -> Double {
@@ -136,7 +136,7 @@ public extension Angle {
     }
     
     var arccosecant: Double {
-        return asin(1 / self.radian)
+        return self.radian.arccosecant
     }
     
     static func arccotangent(of angle: Angle) -> Double {
@@ -144,6 +144,6 @@ public extension Angle {
     }
     
     var arccotangent: Double {
-        return atan(1 / self.radian)
+        return self.radian.arccotangent
     }
 }
