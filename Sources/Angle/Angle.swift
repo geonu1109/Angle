@@ -53,24 +53,48 @@ public extension Angle {
 
 // extension for trigonometric functions
 public extension Angle {
+    static func sine(of angle: Angle) -> Double {
+        return angle.sine
+    }
+    
     var sine: Double {
         return sin(self.radian)
+    }
+    
+    static func cosine(of angle: Angle) -> Double {
+        return angle.cosine
     }
     
     var cosine: Double {
         return cos(self.radian)
     }
     
+    static func tangent(of angle: Angle) -> Double {
+        return angle.tangent
+    }
+    
     var tangent: Double {
         return tan(self.radian)
+    }
+    
+    static func secant(of angle: Angle) -> Double {
+        return angle.secant
     }
     
     var secant: Double {
         return 1 / cos(self.radian)
     }
     
+    static func cosecant(of angle: Angle) -> Double {
+        return angle.cosecant
+    }
+    
     var cosecant: Double {
         return 1 / sin(self.radian)
+    }
+    
+    static func cotangent(of angle: Angle) -> Double {
+        return angle.cotangent
     }
     
     var cotangent: Double {
