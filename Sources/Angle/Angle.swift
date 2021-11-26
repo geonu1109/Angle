@@ -17,6 +17,12 @@ public struct Angle {
     }
 }
 
+extension Angle: ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Double) {
+        self.init(radian: value)
+    }
+}
+
 // extension for sexagesimal measure
 public extension Angle {
     var degree: Double {
