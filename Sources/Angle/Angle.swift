@@ -15,8 +15,15 @@ public struct Angle {
     public static func radian(_ radian: Double) -> Angle {
         return .init(radian: radian)
     }
+    
+    public static func + (lhs: Angle, rhs: Angle) -> Angle {
+        return .init(radian: lhs.radian + rhs.radian)
+    }
+    
+    public static func - (lhs: Angle, rhs: Angle) -> Angle {
+        return .init(radian: lhs.radian - rhs.radian)
+    }
 }
-
 
 // MARK: extension for sexagesimal measure
 public extension Angle {
@@ -145,5 +152,19 @@ public extension Angle {
     
     var arccotangent: Double {
         return self.radian.arccotangent
+    }
+}
+
+// MARK: extension for adopt ExpressibleByFloatLiteral
+extension Angle: ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Double) {
+        self.init(radian: value)
+    }
+}
+
+// MARK: extension for adopt Equatable and Comparable
+extension Angle: Equatable, Comparable {
+    public static func < (lhs: Angle, rhs: Angle) -> Bool {
+        return lhs.radian < rhs.radian
     }
 }
