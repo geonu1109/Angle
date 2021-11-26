@@ -11,6 +11,10 @@ public struct Angle {
     public init(radian: Double) {
         self.radian = radian
     }
+    
+    public static func radian(_ radian: Double) -> Angle {
+        return .init(radian: radian)
+    }
 }
 
 // extension for sexagesimal measure
@@ -26,6 +30,10 @@ public extension Angle {
     
     init(degree: Double) {
         self.radian = Self.getRadianFromDegree(degree)
+    }
+    
+    static func degree(_ degree: Double) -> Angle {
+        return self.init(degree: degree)
     }
     
     static func getRadianFromDegree(_ degree: Double) -> Double {
