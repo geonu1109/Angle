@@ -30,3 +30,29 @@ let sineForRightAngle: Double = Angle.right.sine
 let arctangentForAngle1: Double = angle1.arctangent
 ```
 
+## Installation
+
+**CocoaPods**
+
+```ruby
+use_frameworks!
+
+target 'ExampleTargetName' do
+    pod 'Angle', '1.2.2'
+end
+```
+
+**Swift Package Manager**
+
+```swift
+// swift-tools-version:5.0
+
+import PackageDescription
+
+let package = Package(
+    name: "ExampleProjectName",
+    dependencies: [
+        .package(name: "Angle", url: "https://github.com/geonu1109/Angle.git", .exact("1.2.2"))
+    ]
+)
+```
